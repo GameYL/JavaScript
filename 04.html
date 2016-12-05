@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body, ul, p { margin: 0; }
+		ul {
+			list-style: none;
+			padding-left: 0;
+			height: 30px;
+		}
+		a {
+			text-decoration: none;
+			color: #333;
+			font-size: 12px;
+		}
+		a:hover { color: #f50; }
+		li {
+			width: 48px;
+			margin-top: 5px;
+			margin-left: 5px;
+			margin-right: 5px;
+			padding-bottom: 5px;
+			text-align: center;
+		}
+		li:hover {
+			border-bottom: 2px solid #f50;
+		}
+		.content>div>p {
+			
+		}
+		p {
+			width: 130px;
+			white-space:nowrap;
+			overflow:hidden; 
+			text-overflow: clip;
+			line-height: 1.5em;
+			margin-right: 10px;
+		}
+		li, .content>div>p {
+			float: left;
+		}
+		.warp {
+			width: 290px;
+			height: 90px;
+			background-color: #eee;
+			margin: 20px auto;
+		}
+		.content>div { display: none; }
+		.content>div { overflow: hidden; }
+		.ceo { width: 290px; }
+		.ceo, .imp { color: #f50; }
+
+	</style>
+</head>
+<body>
+	<div class="warp">
+		<div>
+			<ul>
+				<li class="active"><a href="#">公告</a></li>
+				<li><a href="#">规则</a></li>
+				<li><a href="#">论坛</a></li>
+				<li><a href="#">安全</a></li>
+				<li><a href="#">公益</a></li>
+			</ul>
+		</div>
+		<div class="content" id="content">
+			<div style="display: block;">
+				<P class="ceo"><a class="imp" href="#">马云:希望未来中国500强里200个CEO来自阿里</a></P>
+				<P><a href="#">阿里第二届“校友”大会</a></P>
+				<P><a href="#">惠誉评级将阿里定为A+</a></P>
+			</div>
+			<div>
+				<p><a href="#">不正当谋利规则变更</a></p>
+				<p><a href="#">淘宝亲宝贝市场管理规范</a></p>
+				<p><a class="imp" href="#">淘宝价格发布规范变更</a></p>
+				<p><a href="#">店铺相关规则调整变更</a></p>
+			</div>
+			<div>
+				<p><a class="imp" href="#">双十二开始报名啦</a></p>
+				<p><a href="#">淘宝论坛招募志愿者</a></p>
+				<p><a href="#">名师一刻-5个亿的秘密</a></p>
+				<p><a href="#">十八纸颠覆家具想象</a></p>
+			</div>
+			<div>
+				<p><a class="imp" href="#">恶意买家疯狂下单？</a></p>
+				<p><a class="imp" href="#">钱盾电脑版来啦！</a></p>
+				<p><a class="imp" href="#">半路货被劫了！</a></p>
+				<p><a class="imp" href="#">许多卖家收到了这条</a></p>
+			</div>
+			<div>
+				<p><a href="#">闲鱼公益上线招募NGO</a></p>
+				<p><a href="#">阿里与残联出助残政策</a></p>
+				<p><a href="#">公益宝贝卖家发票索取</a></p>
+				<p><a href="#">公益机构淘宝开店攻略</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.active {
+			background-color: yellow;
+		}
+		div {
+			display: none;
+			width: 200px;
+			height: 100px;
+			background-color: #eee;
+			border: 1px solid #ccc;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var aInput = document.getElementsByTagName('input');
+			var aDiv = document.getElementsByTagName('div')
+				for (var i = 0; i < aInput.length; i++) {
+					aInput[i].index = i;
+					aInput[i].onclick = function () {
+						for (var i = 0; i < aInput.length; i++) {
+							aInput[i].className = '';
+							aDiv[i].style.display = 'none';
+						}
+						this.className = 'active';
+						aDiv[this.index].style.display = 'block';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" class="active" value="1">
+	<input type="button" value="2">
+	<input type="button" value="3">
+	<div style="display: block;">11111</div>
+	<div>22222</div>
+	<div>33333</div>
+</body>
+</html>

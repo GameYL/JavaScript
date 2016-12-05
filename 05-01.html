@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: #eee;
+			border: 1px solid #ccc;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var oTxt = Document.getElementById('text');
+			var oBtn = Document.getElementById('btn');
+			var oBox = Document.getElementById('box');
+
+			oBtn.onclick = function () {
+				oBox.innerHTML = oTxt.value;
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="text" data-com.agilebits.onepassword.user-edited="yes">
+	<input type="button" id="btn" value="设置文本">
+	<div id="box"></div>
+</body>
+</html>

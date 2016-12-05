@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			margin: 20px;
+		}
+		ul {
+			padding-left: 0;
+			list-style: none;
+		}
+		/* case01 */
+		#box01 {
+			display: none;
+			width: 200px;
+			height: 40px;
+			font-size: 12px;
+			background-color: #f50;
+			border: 1px solid #00f;
+		}
+		/* case03 */
+		.box02 {
+			width: 100px;
+			line-height: 100px;
+			text-align: center;
+			font-size: 12px;
+			color: #fff;
+			background-color: #EC999A;
+			border: 1px solid #f00;
+		}
+		.demo {
+			width: 200px;
+			line-height: 200px;
+			text-align: center;
+			font-size: 12px;
+			color: #000;
+			background-color: green;
+			border: 2px solid #040;
+		}
+		/* case04 */
+		#box03 {
+			width: 100px;
+			height: 100px;
+			background-color: #f00;
+		}
+		/* case05 */
+		#box04 {
+			width: 100px;
+			height: 100px;
+			background-color: #f00;
+		}
+		/* case06 */
+		.menu {
+			width: 54px;
+		}
+		.menu div {
+			background-image: url(ico-down.gif);
+			background-repeat: no-repeat;
+			background-position: right 8px;
+			margin: 0;
+		}
+		.menu ul {
+			text-align: center;
+			border: 1px solid #000;
+			margin: 0;
+		}
+		.menu li a:hover {
+			display: block;
+			background-color: #ccc;
+		}
+	</style>
+	<script>
+		function toGreen() {
+			document.getElementById('box03').style.width = '200px';
+			document.getElementById('box03').style.height = '200px';
+			document.getElementById('box03').style.backgroundColor = '#0f0';
+		}
+		function toRed() {
+			document.getElementById('box03').style.width = '100px';
+			document.getElementById('box03').style.height = '100px';
+			document.getElementById('box03').style.backgroundColor = '#f00';
+
+		}
+
+
+
+		window.onload = function () {
+			/* case06 */
+			var oTit = document.getElementById('title');
+			var oUl = document.getElementById('list');
+			  oTit.onclick = function () {
+				if (oUl.style.display == 'none') {
+					oUl.style.display = 'block';
+					oTit.style.backgroundImage = 'url(../images/ico-up.gif)';
+				} 
+				else {
+					oUl.style.display = 'none';
+					oTit.style.backgroundImage = 'url(../images/ico-down.gif)';
+				}
+			}
+			/* case07 */
+			var oBtn = document.getElementById('btn');
+			var aInput = document.getElementsByTagName('input');
+			oBtn.onclick = function () {
+				for (var i = 0; i < aInput.length; i++) {
+					if (aInput[i].checked == true)
+					{
+					 	aInput[i].checked = false;
+					}
+					else 
+					{
+						aInput[i].checked = true;
+					}
+				}
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<!-- case01 -->
+	<label onmouseover="document.getElementById('box01').style.display = 'block'" 
+	onmouseout="document.getElementById('box01').style.display = 'none'">
+	<input type="checkbox">remember me!</label>
+	<div id="box01">请不要在公共场合勾选！</div>
+	<!-- case02 -->
+	<p onmouseover="alert('a')">fff</p>
+	<!-- case03 -->
+	<div id="box02" class="box02" onmouseover="document.getElementById('box02').className = 'demo'" 
+	onmouseout="document.getElementById('box02').className = 'box02'">更改样式</div>
+	<!-- case04 -->
+	<div id="box03" onmouseover="toGreen()" onmouseout="toRed()"></div>
+	<!-- case05 -->
+	<div id="box04"></div>
+	<!-- case06 -->
+	<div id="box05">
+		<div class="menu">
+			<div id="title">标题栏</div>
+			<ul id="list">
+				<li><a href="#">列表一</a></li>
+				<li><a href="#">列表二</a></li>
+				<li><a href="#">列表三</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- case07 -->
+	<div id="box06">
+		<h3 id="btn">全选</h3>
+		<ul>
+			<li><input type="checkbox">选项</li>
+			<li><input type="checkbox">选项</li>
+			<li><input type="checkbox">选项</li>
+			<li><input type="checkbox">选项</li>
+			<li><input type="checkbox">选项</li>
+			<li><input type="checkbox">选项</li>
+			<li><input type="checkbox">选项</li>
+			<li><input type="checkbox">选项</li>
+		</ul>
+	</div>
+	
+	<script>
+		var oDiv = document.getElementById('box04');
+		function Green() {
+		document.getElementById('box04').style.width = '200px';
+		document.getElementById('box04').style.height = '200px';
+		document.getElementById('box04').style.backgroundColor = '#0f0';
+		}
+		function Red() {
+		document.getElementById('box04').style.width = '100px';
+		document.getElementById('box04').style.height = '100px';
+		document.getElementById('box04').style.backgroundColor = '#f00';
+		}
+		oDiv.onmouseover = Green;
+		oDiv.onmouseout = Red
+	</script>
+</body>
+</html>
