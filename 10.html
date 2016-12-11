@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,
+		ul { margin: 0; }
+		ul {
+			padding-left: 0;
+			list-style: none;
+		}
+		img { vertical-align: middle; }
+		.box {
+			position: relative;
+			width: 720px;
+			height: 140px;
+			overflow: hidden;
+			margin: 20px auto;
+			border: 1px solid #000;
+		}
+		.box li { float: left; }
+		.box a {
+			position: absolute;
+			top: 50%;
+			display: block;
+			width: 30px;
+			height: 30px;
+			margin-top: -15px;
+		}
+		.l-btn {
+			left: 20px;
+			background-image: url(images/icon_control.png);
+		}
+		.l-btn:hover {
+			background-position: 0 30px;
+		}
+		.r-btn {
+			right: 20px;
+			background-image: url(images/icon_control.png);
+			background-position: 30px 0;
+		}
+		.r-btn:hover {
+			background-position: 30px 30px;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var oBox = document.getElementById('box');
+			var oUl = oBox.getElementsByTagName('ul')[0];
+			var aLi = oBox.getElementsByTagName('li');
+			var aBtn = oBox.getElementsByTagName('a');
+			var Speed = -10;
+			oUl.innerHTML += oUl.innerHTML;
+			oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+			setInterval (function () {
+				oUl.style.left = oUl.offsetLeft + - 10 + 'px';
+			}, 30)
+			aBtn[0].onclick = function () {
+
+			}
+			aBtn[1].onclick = function () {
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="box" id="box">
+		<ul>
+			<li><img src="images/tb01.jpg" alt=""></li>
+			<li><img src="images/tb02.jpg" alt=""></li>
+			<li><img src="images/tb03.jpg" alt=""></li>
+			<li><img src="images/tb04.jpg" alt=""></li>
+		</ul>
+		<a class="l-btn" href="#"></a>
+		<a class="r-btn" href="#"></a>
+	</div>
+</body>
+</html>

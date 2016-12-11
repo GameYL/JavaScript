@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box01 {
+			width: 200px;
+			height: 60px;
+			background-color: #f00;
+		}
+		.box02 {
+			display: none;
+			width: 150px;
+			height: 40px;
+			margin: 10px;
+			background-color: #0ff;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var oBox01 = document.getElementById('box01');
+			var oBox02 = document.getElementById('box02');
+			var timmer = null;
+			// 方法一
+			// oBox01.onmouseover = function Show() {
+			// 	oBox02.style.display = 'block';
+			// 	clearTimeout(timmer);
+			// }
+			// oBox02.onmouseover = function Show() {
+			// 	oBox02.style.display = 'block';
+			// 	clearTimeout(timmer);
+			// }
+			// oBox01.onmouseout = function Hide() {
+			// 	timmer = setTimeout(function () {
+			// 		oBox02.style.display = 'none';
+			// 	}, 300);
+			// }
+			// oBox02.onmouseout = function Hide() {
+			// 	timmer = setTimeout(function () {
+			// 		oBox02.style.display = 'none';
+			// 	}, 300);
+			// }
+			// 方法二
+			// function Show() {
+			// 	oBox02.style.display = 'block';
+			// 	clearTimeout(timmer);
+			// }
+			// function Hide() {
+			// 	timmer = setTimeout(function () {
+			// 		oBox02.style.display = 'none';
+			// 	}, 300);
+			// }
+			// oBox01.onmouseover = Show;
+			// oBox02.onmouseover = Show;
+			// oBox01.onmouseout = Hide;
+			// oBox02.onmouseout = Hide;
+			// 方法三
+			oBox01.onmouseover = oBox02.onmouseover = function () {
+				oBox02.style.display = 'block';
+				clearTimeout(timmer);
+			};
+			oBox01.onmouseout = oBox02.onmouseout = function Hide() {
+				timmer = setTimeout(function () {
+					oBox02.style.display = 'none';
+				}, 300);
+			};
+		}
+	</script>
+</head>
+<body>
+	<div class="box01" id="box01"></div>
+	<div class="box02" id="box02"></div>
+</body>
+</html>

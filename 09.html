@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>zh</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		.box {
+			position: relative;
+			left: -200px;
+			width: 200px;
+			height: 150px;
+			background-color: #f00;
+		}
+		.box span {
+			position: absolute;
+			right: -16px;
+			width: 16px;
+			height: 40px;
+			background-color: #00f;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			var oBox = document.getElementById('box');
+			var timmer = null;
+			// oBox.onmouseover = function () {
+			// 	clearInterval(timmer);
+			// 	timmer = setInterval(function () {
+			// 		if (oBox.offsetLeft == 0) {
+			// 			clearInterval(timmer);
+			// 		} 
+			// 		else {
+			// 			oBox.style.left = oBox.offsetLeft + 10 + 'px';
+			// 		}
+			// 	}, 30);
+			// }
+			// oBox.onmouseout = function () {
+			// 	timmer = setInterval(function () {
+			// 		if (oBox.offsetLeft == -200) {
+			// 			clearInterval(timmer);
+			// 		} 
+			// 		else {
+			// 			oBox.style.left = oBox.offsetLeft - 10 + 'px';
+			// 		}
+			// 	}, 30);
+			// }
+			// 精简方法一
+			function startMove(speed, iTarget) {
+				clearInterval(timmer);
+				timmer = setInterval(function () {
+					if (oBox.offsetLeft == iTarget) {
+						clearInterval(timmer);
+					} 
+					else {
+						oBox.style.left = oBox.offsetLeft + speed + 'px';
+					}
+				}, 30);
+			}
+			oBox.onmouseover = function () {
+				startMove(10, 0);
+			}
+			oBox.onmouseout = function () {
+				startMove(-10, -200)
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="box" id="box">
+		<span>分享</span>
+	</div>
+</body>
+</html>
